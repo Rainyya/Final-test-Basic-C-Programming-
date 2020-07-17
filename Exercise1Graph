@@ -1,0 +1,183 @@
+#include <iostream> 
+#include <stdlib.h>    
+#include <time.h> 
+#include <windows.h>       
+using namespace std;
+int main() 
+{
+	int age=0,total=0, a=0, countSexM=0, countSexF=0;
+	int countMale15=0, countMale25=0, countMale35=0, countMale36=0, countFemale15=0, countFemale25=0, countFemale35=0, countFemale36=0 ;
+	char again = 'Y', sex=0;
+	HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE); 	
+	cout <<" ============================="<<endl;
+	cout <<" Melona internet cafe"<<endl;
+	cout <<" ============================="<<endl;
+	cout <<" --Admin mode--"<<endl<<endl;
+	do 
+	{		
+		cout <<" Enter sex of customers cafe (F/M): ";
+		cin >> sex;
+		switch(sex)
+		{
+			case 'm' :	
+			case 'M' : 	countSexM+=1;
+						cout <<" Enter age of male customer : ";
+						cin >> age;
+						if((age>=0)&&(age<=15))
+						{
+							countMale15++;						
+						}
+						if((age>=16)&&(age<=25))
+						{
+							countMale25++;							
+						}
+						if((age>=26)&&(age<=35))
+						{
+							countMale35++;							
+						}
+						if(age>=36)
+						{
+							countMale36++;						
+						}					   	
+						break;
+			case 'f' :
+			case 'F' : 	countSexF+=1;
+						cout <<" Enter age of female customer : ";
+						cin >> age;
+						if((age>=0)&&(age<=15))
+						{
+							countFemale15++;							
+						}
+						if((age>=16)&&(age<=25))
+						{
+							countFemale25++;							
+						}
+						if((age>=26)&&(age<=35))
+						{
+							countFemale35++;							
+						}
+						if(age>=36)
+						{
+							countFemale36++;							
+						}			
+					   	break;			
+			default : 	cout<< " Error !"<<endl<<endl;
+						return 0;
+						break;			   		   		   
+		}
+		cout<<endl;		
+		cout << " Again ? (Y/N) : ";
+		cin >> again;
+		system("cls");	
+	} while((again == 'Y') || (again == 'y'));	
+	
+	int countMaleTotal = countMale15+countMale25+countMale35+countMale36;
+	int countFemaleTotal = countFemale15+countFemale25+countFemale35+countFemale36;		
+	system("cls");
+	cout <<" ========================"<<endl;
+	cout << " Summary Report  "<<endl;
+	cout <<" ========================"<<endl;
+	total=countSexM+countSexF;
+	cout <<" Total [ "<<total<<" ] Person "<<endl;							
+	
+	cout <<" Male\t\t";
+	for(int a=0;a<countMaleTotal;a++)
+   	{
+   		SetConsoleTextAttribute(hStdOut, 1);
+		cout <<"|";
+		SetConsoleTextAttribute(hStdOut, 7);
+	}
+	cout <<" [ "<<countSexM<<" ]"<<endl;		
+	
+	cout <<" Female\t\t";	
+	for(int a=0;a<countFemaleTotal;a++)
+   	{
+   		SetConsoleTextAttribute(hStdOut, 5);
+		cout <<"|";
+		SetConsoleTextAttribute(hStdOut, 7);
+	}
+	cout <<" [ "<<countSexF<<" ]"<<endl;
+	cout << endl;
+	
+	cout <<" Age report "<<endl;
+	cout <<" 0 - 15 Total [ "<<countMale15+countFemale15<<" ] Person"<<endl;		
+	cout <<" Male\t\t";
+	for(int a=0;a<countMale15;a++)
+   	{
+   		SetConsoleTextAttribute(hStdOut, 1);
+		cout <<"|";
+		SetConsoleTextAttribute(hStdOut, 7);
+	}
+	cout <<" [ "<<countMale15<<" ]"<<endl;		
+	
+	cout <<" Female\t\t";
+	for(int a=0;a<countFemale15;a++)
+   	{
+   		SetConsoleTextAttribute(hStdOut, 5);
+		cout <<"|";
+		SetConsoleTextAttribute(hStdOut, 7);
+	}
+	cout <<" [ "<<countFemale15<<" ]"<<endl;
+	cout << endl;
+	
+	cout <<" 16 - 25 Total [ "<<countMale25+countFemale25<<" ] Person"<<endl;
+	cout <<" Male\t\t";
+	for(int a=0;a<countMale25;a++)	
+   	{
+   		SetConsoleTextAttribute(hStdOut, 1);
+		cout <<"|";
+		SetConsoleTextAttribute(hStdOut, 7);
+	}
+	cout <<" [ "<<countMale25<<" ]"<<endl;	
+	
+	cout <<" Female\t\t";
+	for(a=0;a<countFemale25;a++)
+   	{
+   		SetConsoleTextAttribute(hStdOut, 5);
+		cout <<"|";
+		SetConsoleTextAttribute(hStdOut, 7);
+	}
+	cout <<" [ "<<countFemale25<<" ]"<<endl;
+	cout << endl;
+	
+	cout <<" 26 - 35 Total [ "<<countMale35+countFemale35<<" ] Person"<<endl;
+	cout <<" Male\t\t";
+	for(int a=0;a<countMale35;a++)
+   	{
+   		SetConsoleTextAttribute(hStdOut, 1);
+		cout <<"|";
+		SetConsoleTextAttribute(hStdOut, 7);
+	}
+	cout <<" [ "<<countMale35<<" ]"<<endl;	
+	
+	cout <<" Female\t\t";
+	for(int a=0;a<countFemale35;a++)
+   	{
+   		SetConsoleTextAttribute(hStdOut, 5);
+		cout <<"|";
+		SetConsoleTextAttribute(hStdOut, 7);
+	}
+	cout <<" [ "<<countFemale35<<" ]"<<endl;
+	cout << endl;
+	
+	cout <<" > 36 Total [ "<<countMale36+countFemale36<<" ] Person"<<endl;		
+	cout <<" Male\t\t";
+	for(int a=0;a<countMale36;a++)
+   	{
+   		SetConsoleTextAttribute(hStdOut, 1);
+		cout <<"|";
+		SetConsoleTextAttribute(hStdOut, 7);
+	}
+	cout <<" [ "<<countMale36<<" ]"<<endl;	
+	
+	cout <<" Female\t\t";
+	for(int a=0;a<countFemale36;a++)
+   	{
+   		SetConsoleTextAttribute(hStdOut, 5);
+		cout <<"|";
+		SetConsoleTextAttribute(hStdOut, 7);
+	}
+	cout <<" [ "<<countFemale36<<" ]"<<endl;
+	cout << endl;
+	return 0;
+}
