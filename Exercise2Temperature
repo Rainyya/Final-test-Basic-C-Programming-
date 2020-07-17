@@ -1,0 +1,87 @@
+#include <iostream>
+using namespace std;
+int main() 
+{
+	int mainOption=0;
+	float division=5.0/9.0, tempInput=0.0, tempSum=0, tempCount=0.0, tempAverage=0.0, celsius=0.0, celsiusAverageF=0.0, celsiusAverageK=0.0;
+	char again = 'Y';
+	do
+	{
+		cout <<" ============================="<<endl;
+		cout <<" Melona Weather Company "<<endl;
+		cout <<" ============================="<<endl;
+		cout << " 1) Insert temperature" << endl;
+		cout << " 2) Report " << endl;
+		cout << " 3) Exit" << endl;	    
+		cout <<endl<< " Select the option : ";
+		cin >> mainOption;
+		system("cls");
+		switch(mainOption)
+		{			
+		case 1 :
+				do
+				{			
+					system("cls");
+					cout << " Insert the temperature : ";
+					cin >> tempInput;
+					tempCount++;
+					tempSum+=tempInput;
+					tempAverage=tempSum/tempCount;
+														
+					cout <<endl;
+					cout <<" Fahrenheit : "<<tempInput<<endl;
+					celsius = division*(tempInput-32);
+					cout <<" Convert to Celsius is : "<<celsius<<endl<<endl;
+					celsiusAverageF = division*(tempAverage-32);
+										
+					cout <<" Kelvin : "<<tempInput<<endl;
+					celsius = tempInput-273;
+					cout <<" Convert to Celsius is : "<<celsius<<endl<<endl;
+					celsiusAverageK = tempAverage-273;
+					
+					cout <<" Celsius : "<<tempInput<<endl;
+					cout <<" To Celsius is : "<<tempInput<<endl<<endl;															
+					cout<<endl;		
+					cout << " Again ? (Y/N) : ";
+					cin >> again;
+					system("cls");					
+				} while((again == 'Y') || (again == 'y'));			
+				system("cls");				
+				break;
+		case 2 : 	
+				cout <<" ============================="<<endl;
+				cout << "     Report of temperature "<<endl;
+				cout <<" ============================="<<endl<<endl;		
+				cout <<" Count : "<<tempCount<<" Number(s)"<<endl<<endl;
+				cout <<" ------------------ "<<endl;
+			    cout <<" Summary Farenheit "<<endl;
+			    cout <<" ------------------ "<<endl;			
+				cout <<" Farenheit average is "<<tempAverage<<endl;
+				cout <<" Convert to Celsius Average is "<<celsiusAverageF<<endl<<endl;
+
+			    cout <<" ------------------ "<<endl;
+				cout <<" Summary Kelvin "<<endl;
+			    cout <<" ------------------ "<<endl;
+				cout <<" Kelvin average is "<<tempAverage<<endl;
+				cout <<" Convert to celsius Average is "<<celsiusAverageK<<endl<<endl;
+				
+				cout <<" ------------------ "<<endl;
+			    cout <<" Summary Celcius "<<endl;
+			    cout <<" ------------------ "<<endl;			
+				cout <<" To Celsius Average is "<<tempAverage<<endl<<endl;
+				
+				system(" pause");
+				system("cls");	
+				break;
+		case 3 : 	
+				cout << " Exit "<<endl;  
+				break;				   	
+		default : 
+				cout<< " Error !"<<endl<<endl;
+				system(" pause");
+				system("cls");
+				break;		
+		}	
+	}while (mainOption != 3);
+	return 0;
+}
