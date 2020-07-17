@@ -1,0 +1,143 @@
+#include <iostream> 
+#include <stdlib.h>    
+#include <time.h> 
+#include <windows.h>  
+#include <iostream>
+using namespace std;
+int main() 
+{
+	char mainOption=0;
+	HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE); 	
+	do
+	{			    		
+		cout <<" ============================="<<endl;
+		cout <<" Traffic Light Signal "<<endl;
+		cout <<" ============================="<<endl;
+		cout << " O) All OFF" << endl;
+		cout << " 1) RED " << endl;
+		cout << " 2) YELLOW " << endl;
+		cout << " 3) GREEN" << endl;	 
+		cout << " E) Exit" << endl;
+		cout <<endl<< " Select the option : ";
+		cin >> mainOption;
+		cout<<endl;
+		switch(mainOption)
+		{			
+		case 'o' :
+		case 'O' :	
+				 SetConsoleTextAttribute(hStdOut, 8);
+				 cout<< " ooooooo"<<endl;
+				 cout<< " ooooooo"<<endl;
+				 cout<< " ooooooo"<<endl;
+				 cout<< " ooooooo"<<endl<<endl;				 				 
+				 cout<< " ooooooo"<<endl;
+				 cout<< " ooooooo"<<endl;
+				 cout<< " ooooooo"<<endl;
+				 cout<< " ooooooo"<<endl<<endl;				 
+				 cout<< " ooooooo"<<endl;
+				 cout<< " ooooooo"<<endl;
+				 cout<< " ooooooo"<<endl;
+				 cout<< " ooooooo"<<endl<<endl;
+				 SetConsoleTextAttribute(hStdOut, 7);
+				 system(" pause");
+				 system("cls");
+				 break;
+		case '1' :
+				 SetConsoleTextAttribute(hStdOut, 8);				 
+				 cout<< " oo";
+				 SetConsoleTextAttribute(hStdOut, 12);
+				 cout<<"ooo";
+				 SetConsoleTextAttribute(hStdOut, 8);
+				 cout<<"oo"<<endl;
+				 SetConsoleTextAttribute(hStdOut, 12);
+				 cout<< " ooooooo"<<endl;
+				 cout<< " ooooooo"<<endl;
+				 SetConsoleTextAttribute(hStdOut, 8);
+				 cout<< " oo";
+				 SetConsoleTextAttribute(hStdOut, 12);
+				 cout<<"ooo";
+				 SetConsoleTextAttribute(hStdOut, 8);
+				 cout<<"oo"<<endl<<endl;				 				 
+				 cout<< " ooooooo"<<endl;
+				 cout<< " ooooooo"<<endl;
+				 cout<< " ooooooo"<<endl;
+				 cout<< " ooooooo"<<endl<<endl;				 
+				 cout<< " ooooooo"<<endl;
+				 cout<< " ooooooo"<<endl;
+				 cout<< " ooooooo"<<endl;
+				 cout<< " ooooooo"<<endl<<endl;
+				 SetConsoleTextAttribute(hStdOut, 7);
+				 system(" pause");
+				 system("cls");
+				 break;
+		case '2' :
+				 SetConsoleTextAttribute(hStdOut, 8);
+				 cout<< " ooooooo"<<endl;
+				 cout<< " ooooooo"<<endl;
+				 cout<< " ooooooo"<<endl;
+				 cout<< " ooooooo"<<endl<<endl;			 
+				 cout<< " oo";
+				 SetConsoleTextAttribute(hStdOut, 14);
+				 cout<<"ooo";
+				 SetConsoleTextAttribute(hStdOut, 8);
+				 cout<<"oo"<<endl;
+				 SetConsoleTextAttribute(hStdOut, 14);
+				 cout<< " ooooooo"<<endl;
+				 cout<< " ooooooo"<<endl;
+				 SetConsoleTextAttribute(hStdOut, 8);
+				 cout<< " oo";
+				 SetConsoleTextAttribute(hStdOut, 14);
+				 cout<<"ooo";
+				 SetConsoleTextAttribute(hStdOut, 8);
+				 cout<<"oo"<<endl<<endl;				 				 								 
+				 cout<< " ooooooo"<<endl;
+				 cout<< " ooooooo"<<endl;
+				 cout<< " ooooooo"<<endl;
+				 cout<< " ooooooo"<<endl<<endl;
+				 SetConsoleTextAttribute(hStdOut, 7);
+				 system(" pause");
+				 system("cls");
+				 break;
+		case '3' :
+				 SetConsoleTextAttribute(hStdOut, 8);
+				 cout<< " ooooooo"<<endl;
+				 cout<< " ooooooo"<<endl;
+				 cout<< " ooooooo"<<endl;
+				 cout<< " ooooooo"<<endl<<endl;				 
+				 cout<< " ooooooo"<<endl;
+				 cout<< " ooooooo"<<endl;
+				 cout<< " ooooooo"<<endl;
+				 cout<< " ooooooo"<<endl<<endl;				 
+				 cout<< " oo";
+				 SetConsoleTextAttribute(hStdOut, 10);
+				 cout<<"ooo";
+				 SetConsoleTextAttribute(hStdOut, 8);
+				 cout<<"oo"<<endl;
+				 SetConsoleTextAttribute(hStdOut, 10);
+				 cout<< " ooooooo"<<endl;
+				 cout<< " ooooooo"<<endl;
+				 SetConsoleTextAttribute(hStdOut, 8);
+				 cout<< " oo";
+				 SetConsoleTextAttribute(hStdOut, 10);
+				 cout<<"ooo";
+				 SetConsoleTextAttribute(hStdOut, 8);
+				 cout<<"oo"<<endl<<endl;
+				 SetConsoleTextAttribute(hStdOut, 7);				 
+				 system(" pause");
+				 system("cls");
+				 break;
+		case 'e' :
+		case 'E' :	
+				cout << " Exit "<<endl;  
+				break;				   	
+		default : 
+				SetConsoleTextAttribute(hStdOut, 12);
+				cout<< " Error !"<<endl<<endl;
+				SetConsoleTextAttribute(hStdOut, 7);
+				system(" pause");
+				system("cls");
+				break;			 		 		 		 		 
+		} 	
+	}while ((mainOption != 'e') && (mainOption != 'E'));			
+	return 0;
+}
