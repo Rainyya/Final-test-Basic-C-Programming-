@@ -6,7 +6,8 @@
 using namespace std;
 int main() 
 {
-	char mainOption=0;
+
+	char mainOption='o';
 	HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE); 	
 	do
 	{			    		
@@ -18,8 +19,7 @@ int main()
 		cout << " 2) YELLOW " << endl;
 		cout << " 3) GREEN" << endl;	 
 		cout << " E) Exit" << endl;
-		cout <<endl<< " Select the option : ";
-		cin >> mainOption;
+		
 		cout<<endl;
 		switch(mainOption)
 		{			
@@ -39,8 +39,8 @@ int main()
 				 cout<< " ooooooo"<<endl;
 				 cout<< " ooooooo"<<endl<<endl;
 				 SetConsoleTextAttribute(hStdOut, 7);
-				 system(" pause");
-				 system("cls");
+				 //system(" pause");
+				 //system("cls");
 				 break;
 		case '1' :
 				 SetConsoleTextAttribute(hStdOut, 8);				 
@@ -67,8 +67,8 @@ int main()
 				 cout<< " ooooooo"<<endl;
 				 cout<< " ooooooo"<<endl<<endl;
 				 SetConsoleTextAttribute(hStdOut, 7);
-				 system(" pause");
-				 system("cls");
+				 //system(" pause");
+				 //system("cls");
 				 break;
 		case '2' :
 				 SetConsoleTextAttribute(hStdOut, 8);
@@ -95,8 +95,8 @@ int main()
 				 cout<< " ooooooo"<<endl;
 				 cout<< " ooooooo"<<endl<<endl;
 				 SetConsoleTextAttribute(hStdOut, 7);
-				 system(" pause");
-				 system("cls");
+				 //system(" pause");
+				 //system("cls");
 				 break;
 		case '3' :
 				 SetConsoleTextAttribute(hStdOut, 8);
@@ -123,8 +123,8 @@ int main()
 				 SetConsoleTextAttribute(hStdOut, 8);
 				 cout<<"oo"<<endl<<endl;
 				 SetConsoleTextAttribute(hStdOut, 7);				 
-				 system(" pause");
-				 system("cls");
+				 //system(" pause");
+				 //system("cls");
 				 break;
 		case 'e' :
 		case 'E' :	
@@ -134,10 +134,15 @@ int main()
 				SetConsoleTextAttribute(hStdOut, 12);
 				cout<< " Error !"<<endl<<endl;
 				SetConsoleTextAttribute(hStdOut, 7);
-				system(" pause");
-				system("cls");
+				//system(" pause");
+				//system("cls");
 				break;			 		 		 		 		 
 		} 	
-	}while ((mainOption != 'e') && (mainOption != 'E'));			
+		cout <<endl<< " Select the option : ";
+		cin >> mainOption;
+		//system(" pause");
+		system("cls");
+	}while ((mainOption != 'e') && (mainOption != 'E'));
+			
 	return 0;
 }
