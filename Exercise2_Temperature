@@ -3,7 +3,8 @@ using namespace std;
 int main() 
 {
 	int mainOption=0;
-	float division=5.0/9.0, tempInput=0.0, tempSum=0, tempCount=0.0, tempAverage=0.0, celsius=0.0, celsiusAverageF=0.0, celsiusAverageK=0.0;
+	float division=5.0/9.0, tempSumF=0, tempSumK=0, tempSumC=0 ,tempAverageF=0,tempAverageK=0, tempAverageC=0, celsius=0, celsiusAverageF=0, celsiusAverageK=0;
+	float tempInputF=0, tempInputK=0,tempInputC=0, tempCount=0 ;
 	char again = 'Y';
 	do
 	{
@@ -22,25 +23,33 @@ int main()
 				do
 				{			
 					system("cls");
-					cout << " Insert the temperature : ";
-					cin >> tempInput;
+					cout << " Insert the temperature Fahrenheit: ";
+					cin >> tempInputF;
+					cout << " Insert the temperature Kelvin: ";
+					cin >> tempInputK;
+					cout << " Insert the temperature Celsius: ";
+					cin >> tempInputC;
 					tempCount++;
-					tempSum+=tempInput;
-					tempAverage=tempSum/tempCount;
+					tempSumF+=tempInputF;
+					tempSumK+=tempInputK;
+					tempSumC+=tempInputC;
+					tempAverageF=tempSumF/tempCount;
+					tempAverageK=tempSumK/tempCount;
+					tempAverageC=tempSumC/tempCount;
 														
 					cout <<endl;
-					cout <<" Fahrenheit : "<<tempInput<<endl;
-					celsius = division*(tempInput-32);
+					cout <<" Fahrenheit : "<<tempInputF<<endl;
+					celsius = division*(tempInputF-32);
 					cout <<" Convert to Celsius is : "<<celsius<<endl<<endl;
-					celsiusAverageF = division*(tempAverage-32);
+					celsiusAverageF = division*(tempAverageF-32);
 										
-					cout <<" Kelvin : "<<tempInput<<endl;
-					celsius = tempInput-273;
+					cout <<" Kelvin : "<<tempInputK<<endl;
+					celsius = tempInputK-273;
 					cout <<" Convert to Celsius is : "<<celsius<<endl<<endl;
-					celsiusAverageK = tempAverage-273;
+					celsiusAverageK = tempAverageK-273;
 					
-					cout <<" Celsius : "<<tempInput<<endl;
-					cout <<" To Celsius is : "<<tempInput<<endl<<endl;															
+					cout <<" Celsius : "<<tempInputC<<endl;
+					cout <<" To Celsius is : "<<tempInputC<<endl<<endl;															
 					cout<<endl;		
 					cout << " Again ? (Y/N) : ";
 					cin >> again;
@@ -56,19 +65,19 @@ int main()
 				cout <<" ------------------ "<<endl;
 			    cout <<" Summary Farenheit "<<endl;
 			    cout <<" ------------------ "<<endl;			
-				cout <<" Farenheit average is "<<tempAverage<<endl;
+				cout <<" Farenheit average is "<<tempAverageF<<endl;
 				cout <<" Convert to Celsius Average is "<<celsiusAverageF<<endl<<endl;
 
 			    cout <<" ------------------ "<<endl;
 				cout <<" Summary Kelvin "<<endl;
 			    cout <<" ------------------ "<<endl;
-				cout <<" Kelvin average is "<<tempAverage<<endl;
+				cout <<" Kelvin average is "<<tempAverageK<<endl;
 				cout <<" Convert to celsius Average is "<<celsiusAverageK<<endl<<endl;
 				
 				cout <<" ------------------ "<<endl;
 			    cout <<" Summary Celcius "<<endl;
 			    cout <<" ------------------ "<<endl;			
-				cout <<" To Celsius Average is "<<tempAverage<<endl<<endl;
+				cout <<" To Celsius Average is "<<tempAverageC<<endl<<endl;
 				
 				system(" pause");
 				system("cls");	
