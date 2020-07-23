@@ -27,15 +27,15 @@ int main()
 						{
 							countMale15++;						
 						}
-						if((age>=16)&&(age<=25))
+						else if((age>=16)&&(age<=25))
 						{
 							countMale25++;							
 						}
-						if((age>=26)&&(age<=35))
+						else if((age>=26)&&(age<=35))
 						{
 							countMale35++;							
 						}
-						if(age>=36)
+						else if(age>=36)
 						{
 							countMale36++;						
 						}					   	
@@ -48,15 +48,15 @@ int main()
 						{
 							countFemale15++;							
 						}
-						if((age>=16)&&(age<=25))
+						else if((age>=16)&&(age<=25))
 						{
 							countFemale25++;							
 						}
-						if((age>=26)&&(age<=35))
+						else if((age>=26)&&(age<=35))
 						{
 							countFemale35++;							
 						}
-						if(age>=36)
+						else if(age>=36)
 						{
 							countFemale36++;							
 						}			
